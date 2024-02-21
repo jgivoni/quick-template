@@ -7,8 +7,11 @@ services:
   php:
     container_name: php_tmp
     image: php:8.3
+    working_dir: /app
     env_file:
       - .env
+    volumes:
+      - .:/app
     command: [ "tail", "-f", "/dev/null" ]
     stop_signal: SIGQUIT
     restart: unless-stopped
