@@ -1,0 +1,8 @@
+# Add these aliases to your shell init script
+# If all your repositories have the same scripts, this will make your commands work with whatever project your in
+alias php='scripts/php.sh'
+alias composer="scripts/composer.sh"
+alias phpstan="scripts/phpstan.sh"
+alias phpunit="scripts/phpunit.sh"
+alias cov="scripts/phpunit-with-coverage.sh"
+alias d="scripts/d.sh"

@@ -1,0 +1,15 @@
+version: '3.2'
+
+name: quick-template
+
+services:
+
+  php:
+    container_name: php_tmp
+    image: php:8.3
+    env_file:
+      - .env
+    command: [ "tail", "-f", "/dev/null" ]
+    stop_signal: SIGQUIT
+    restart: unless-stopped
+    stop_grace_period: 60s
