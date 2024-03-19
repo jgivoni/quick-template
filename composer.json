@@ -6,9 +6,26 @@
         "template"
     ],
     "license": "MIT",
+    "authors": [
+        {
+            "name": "Jakob Givoni",
+            "email": "jakob@givoni.dk"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "jgivoni\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "tests\\": "tests"
+        }
+    },
     "require": {
         "php": "^8.3",
         "ext-mbstring": "*",
+        "ext-json": "*",
         "ext-zend-opcache": "*",
         "ext-intl": "*"
     },
