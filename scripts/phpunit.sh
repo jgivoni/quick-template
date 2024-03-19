@@ -1,2 +1,2 @@
 #!/bin/sh
-docker compose exec -it php vendor/bin/phpunit "$@"
+docker compose exec -it -e XDEBUG_MODE=off php vendor/bin/phpunit "$@"

@@ -1,0 +1,17 @@
+{
+    "window.title": "quick-template",
+    "intelephense.environment.phpVersion": "8.3",
+    "cSpell.words": [
+        "jgivoni",
+    ],
+    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client",
+    "editor.formatOnSave": true,
+    "emeraldwalk.runonsave": {
+        "commands": [
+            {
+                "match": ".php",
+                "cmd": "scripts/phpcsfixer.sh --format=json fix ${relativeFile}"
+            },
+        ]
+    }
+}
