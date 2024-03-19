@@ -1,0 +1,21 @@
+{
+    "name": "jgivoni/quick-template",
+    "description": "A starting point and consolidated structure",
+    "keywords": [
+        "jgivoni",
+        "template"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": "^8.3",
+        "ext-mbstring": "*",
+        "ext-zend-opcache": "*",
+        "ext-intl": "*"
+    },
+    "require-dev": {
+        "ext-xdebug": "*",
+        "friendsofphp/php-cs-fixer": "^3.52",
+        "phpstan/phpstan": "^1.10",
+        "phpunit/phpunit": "^11.0"
+    }
+}
