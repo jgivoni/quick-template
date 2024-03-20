@@ -11,6 +11,6 @@ return (new Config())
         '@PSR12' => true,
         '@Symfony' => true,
         'phpdoc_to_comment' => false,
-        'concat_space' => 'one',
+        'concat_space' => ['spacing' => 'one'],
     ])
     ->setFinder($finder);

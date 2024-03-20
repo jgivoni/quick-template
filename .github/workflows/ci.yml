@@ -42,4 +42,39 @@ jobs:
                 composer validate
                 composer install
                 XDEBUG_MODE=off php -d memory_limit=256M vendor/bin/phpstan analyze
+
+  job2:
+    strategy:
+        matrix:
+          php_version: ["8.3"]
+    name: PhpUnit unit tests ${{ matrix.php_version }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout codebase
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build and push
+        uses: docker/build-push-action@v5
+        with:
+            context: .
+            file: ./Dockerfile
+            tags: myimage:${{ matrix.php_version }}
+            build-args: |
+              PHP_VERSION=${{ matrix.php_version }}
+            cache-from: type=gha
+            cache-to: type=gha,mode=max
+            push: false
+            load: true
+
+      - name: Run container
+        uses: addnab/docker-run-action@v3
+        with:
+            image: myimage:${{ matrix.php_version }}
+            options: -v ${{ github.workspace }}:/app
+            run: |
+                composer install
+                XDEBUG_MODE=off vendor/bin/phpunit --testsuite Unit
         

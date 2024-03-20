@@ -14,7 +14,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "jgivoni\\": "src/"
+            "App\\": "src/"
         }
     },
     "autoload-dev": {
@@ -27,7 +27,8 @@
         "ext-mbstring": "*",
         "ext-json": "*",
         "ext-zend-opcache": "*",
-        "ext-intl": "*"
+        "ext-intl": "*",
+        "symfony/http-foundation": "^7.0"
     },
     "require-dev": {
         "ext-xdebug": "*",
