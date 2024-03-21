@@ -4,6 +4,7 @@ namespace tests\Unit\application\controllers;
 
 use App\application\controllers\RegisterUserController;
 use App\domain\models\UserAccountEntity;
+use App\domain\models\ValueObject\ValidEmailValue;
 use App\domain\services\RegisterUserServiceInterface;
 use PHPUnit\Framework\Attributes\Test;
 use Symfony\Component\HttpFoundation\Exception\BadRequestException;
@@ -21,7 +22,7 @@ class RegisterUserController_Test extends UnitTestCase
             registerUserService: $this->createConfiguredMock(RegisterUserServiceInterface::class, [
                 'register' => new UserAccountEntity(
                     userId: '123',
-                    email: 'user@email.com',
+                    email: new ValidEmailValue('user@email.com'),
                 ),
             ]),
         );
